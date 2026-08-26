@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AY Décor & Furniture | Where Comfort Meets Elegance</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f3ed;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 15, 15, 0.96);
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #c9a86a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #c9a86a;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 140px 7% 80px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.58),
+                    rgba(0,0,0,0.58)
+                ),
+                url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=90")
+                center/cover;
+
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            color: #c9a86a;
+            letter-spacing: 4px;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 82px);
+            line-height: 1.02;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #c9a86a;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #eeeeee;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .btn {
+            display: inline-block;
+            padding: 15px 27px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        .gold {
+            background: #c9a86a;
+            color: #111;
+        }
+
+        .dark {
+            background: #171717;
+            color: white;
+        }
+
+        .outline {
+            border: 1px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn:hover {
+            opacity: 0.82;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-heading small {
+            color: #b08b4d;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+            color: #666;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .service-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .service h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #666;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .product img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product h3 {
+            margin-bottom: 7px;
+        }
+
+        .product p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #b08b4d;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product .btn {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* ================= FEATURE ================= */
+
+        .feature {
+            background: #181818;
+            color: white;
+        }
+
+        .feature-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .feature img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .feature-text small {
+            color: #c9a86a;
+            letter-spacing: 3px;
+        }
+
+        .feature-text h2 {
+            font-size: 46px;
+            line-height: 1.1;
+            margin: 15px 0 20px;
+        }
+
+        .feature-text p {
+            color: #ccc;
+            margin-bottom: 18px;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        /* ================= CART ================= */
+
+        .cart-section {
+            background: #ebe6dc;
+        }
+
+        .cart {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            gap: 15px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item h4 {
+            margin-bottom: 4px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity button {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: #171717;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #777;
+            padding: 20px;
+        }
+
+        /* ================= QUOTE FORM ================= */
+
+        .quote {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .quote input,
+        .quote textarea,
+        .quote select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 15px;
+        }
+
+        .quote textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .quote button {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* ================= TESTIMONIALS ================= */
+
+        .testimonials {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .stars {
+            color: #c9a86a;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #171717;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-heading p {
+            color: #bbb;
+        }
+
+        .contact-info {
+            max-width: 650px;
+            margin: auto;
+            background: #222;
+            padding: 35px;
+            border-radius: 8px;
+        }
+
+        .contact-info p {
+            margin: 12px;
+            font-size: 18px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0c0c0c;
+            color: #888;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer strong {
+            color: #c9a86a;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 150px 25px 70px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 280px;
+            }
+
+            .feature img {
+                height: 350px;
+            }
+
+            .feature-text h2 {
+                font-size: 36px;
+            }
+
+            .cart-item {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <div class="logo">
+            AY <span>Décor & Furniture</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#furniture">Furniture</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Abuja • Furniture • Interior Design
+            </div>
+
+            <h1>
+                Where Comfort
+                <span>Meets Elegance.</span>
+            </h1>
+
+            <p>
+                Premium furniture and interior design crafted
+                to transform ordinary spaces into beautiful,
+                comfortable environments.
+            </p>
+
+            <a
+                href="#furniture"
+                class="btn gold">
+                Explore Furniture
+            </a>
+
+            <a
+                href="#quote"
+                class="btn outline">
+                Request a Quote
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services">
+
+        <div class="section-heading">
+
+            <small>Our Expertise</small>
+
+            <h2>What We Do</h2>
+
+            <p>
+                From one beautiful piece of furniture to a
+                complete interior transformation, AY creates
+                spaces designed around you.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+            <div class="service">
+
+                <div class="service-icon">🛋️</div>
+
+                <h3>Custom Furniture</h3>
+
+                <p>
+                    Bespoke sofas, beds, dining sets, tables
+                    and other furniture designed for your space.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">🏠</div>
+
+                <h3>Interior Decoration</h3>
+
+                <p>
+                    Modern and luxurious interior concepts
+                    for homes, apartments, offices and more.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">✨</div>
+
+                <h3>Complete Makeovers</h3>
+
+                <p>
+                    We help transform your space from concept
+                    and planning through installation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FURNITURE ================= -->
+
+    <section id="furniture">
+
+        <div class="section-heading">
+
+            <small>Our Collection</small>
+
+            <h2>Featured Furniture</h2>
+
+            <p>
+                Choose your favorite pieces and add them
+                to your enquiry cart.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=85"
+                    alt="Luxury sofa">
+
+                <div class="product-info">
+
+                    <h3>Luxury Sofa</h3>
+
+                    <p>
+                        Elegant contemporary sofa for
+                        sophisticated living spaces.
+                    </p>
+
+                    <div class="price">
+                        ₦850,000
+                    </div>
+
+                    <button
+                        class="btn dark"
+                        onclick="addToCart('Luxury Sofa', 850000)">
+                        Add to Enquiry
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=85"
+                    alt="Luxury bed">
+
+                <div class="product-info">
+
+                    <h3>Luxury Bed</h3>
+
+                    <p>
+                        Modern upholstered bed designed
+                        for comfort and elegance.
+                    </p>
+
+                    <div class="price">
+                        ₦650,000
+                    </div>
+
+                    <button
+                        class="btn dark"
+                        onclick="addToCart('Luxury Bed', 650000)">
+                        Add to Enquiry
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=900&q=85"
+                    alt="Dining table">
+
+                <div class="product-info">
+
+                    <h3>Dining Set</h3>
+
+                    <p>
+                        Stylish dining furniture for
+                        modern homes and apartments.
+                    </p>
+
+                    <div class="price">
+                        ₦750,000
+                    </div>
+
+                    <button
+                        class="btn dark"
+                        onclick="addToCart('Dining Set', 750000)">
+                        Add to Enquiry
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=900&q=85"
+                    alt="Modern chair">
+
+                <div class="product-info">
+
+                    <h3>Accent Chair</h3>
+
+                    <p>
+                        A statement chair that adds character
+                        to any interior.
+                    </p>
+
+                    <div class="price">
+                        ₦280,000
+                    </div>
+
+                    <button
+                        class="btn dark"
+                        onclick="addToCart('Accent Chair', 280000)">
+                        Add to Enquiry
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURE ================= -->
+
+    <section class="feature">
+
+        <div class="feature-container">
+
+            <img
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+                alt="Luxury interior">
+
+            <div class="feature-text">
+
+                <small>DESIGNED FOR YOU</small>
+
+                <h2>
+                    Your Space.
+                    <br>
+                    Your <span>Signature.</span>
+                </h2>
+
+                <p>
+                    Every room tells a story. Our job is to make
+                    yours beautiful.
+                </p>
+
+                <p>
+                    We combine thoughtful design, quality
+                    furniture and elegant finishing to create
+                    interiors that feel uniquely yours.
+                </p>
+
+                <a
+                    href="#quote"
+                    class="btn gold">
+                    Start Your Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery">
+
+        <div class="section-heading">
+
+            <small>Inspiration</small>
+
+            <h2>Interior Gallery</h2>
+
+            <p>
+                Explore the style and atmosphere that inspires
+                our furniture and interior work.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <img
+                src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=85"
+                alt="Luxury living room">
+
+            <img
+                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
+                alt="Modern bedroom">
+
+            <img
+                src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1000&q=85"
+                alt="Modern interior">
+
+            <img
+                src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=85"
+                alt="Luxury interior design">
+
+            <img
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85"
+                alt="Elegant living room">
+
+            <img
+                src="https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=1000&q=85"
+                alt="Modern furniture">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CART ================= -->
+
+    <section class="cart-section" id="cart">
+
+        <div class="section-heading">
+
+            <small>Your Selection</small>
+
+            <h2>Enquiry Cart</h2>
+
+            <p>
+                Select the furniture you're interested in.
+                We'll send your selection to AY on WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="cart">
+
+            <div id="cartItems">
+
+                <div class="empty-cart">
+                    Your enquiry cart is empty.
+                </div>
+
+            </div>
+
+            <div class="cart-total">
+                Total: ₦<span id="cartTotal">0</span>
+            </div>
+
+            <div style="text-align:center; margin-top:20px;">
+
+                <a href="#quote" class="btn gold">
+                    Continue to Quote
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= QUOTE FORM ================= -->
+
+    <section id="quote">
+
+        <div class="section-heading">
+
+            <small>Let's Work Together</small>
+
+            <h2>Request a Quote</h2>
+
+            <p>
+                Tell us what you need and we'll contact you
+                through WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="quote">
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your full name">
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Your phone number">
+
+            <input
+                type="text"
+                id="customerLocation"
+                placeholder="Your location">
+
+            <select id="serviceType">
+
+                <option value="">
+                    Select a service
+                </option>
+
+                <option>
+                    Custom Furniture
+                </option>
+
+                <option>
+                    Interior Decoration
+                </option>
+
+                <option>
+                    Complete Interior Makeover
+                </option>
+
+                <option>
+                    Furniture Purchase
+                </option>
+
+            </select>
+
+            <textarea
+                id="customerMessage"
+                placeholder="Tell us about your project...">
+            </textarea>
+
+            <button
+                class="btn gold"
+                onclick="sendQuote()">
+                💬 Send Quote Request on WhatsApp
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TESTIMONIALS ================= -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <small>Client Experience</small>
+
+            <h2>What Our Clients Say</h2>
+
+        </div>
+
+
+        <div class="testimonials">
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Beautiful work and attention to detail.
+                    The furniture completely transformed my space."
+                </p>
+
+                <strong>— Client</strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The design was elegant, modern and exactly
+                    what I wanted."
+                </p>
+
+                <strong>— Client</strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Professional service and beautiful
+                    furniture. Highly recommended."
+                </p>
+
+                <strong>— Client</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-heading">
+
+            <small>Get In Touch</small>
+
+            <h2>Let's Create Something Beautiful</h2>
+
+            <p>
+                Have a project in mind? Contact AY Décor &
+                Furniture today.
+            </p>
+
+        </div>
+
+
+        <div class="contact-info">
+
+            <p>📍 Abuja, Nigeria</p>
+
+            <p>📞 0814 329 7963</p>
+
+            <p>💬 +234 705 557 1252</p>
+
+            <a
+                href="https://wa.me/2347055571252?text=Hello%20AY%20Décor%20%26%20Furniture%2C%20I%20would%20like%20to%20make%20an%20inquiry."
+                class="btn gold">
+                WhatsApp Us
+            </a>
+
+            <a
+                href="tel:+2348143297963"
+                class="btn outline">
+                Call Us
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            <strong>AY Décor & Furniture</strong>
+        </p>
+
+        <p>
+            Where Comfort Meets Elegance.
+        </p>
+
+        <p>
+            Abuja, Nigeria
+        </p>
+
+        <p>
+            © 2026 AY Décor & Furniture. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        let cart = [];
+
+
+        function addToCart(name, price) {
+
+            let existing = cart.find(item => item.name === name);
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+
+            }
+
+            updateCart();
+
+            document.getElementById("cart")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+        }
+
+
+        function increaseQuantity(index) {
+
+            cart[index].quantity++;
+
+            updateCart();
+        }
+
+
+        function decreaseQuantity(index) {
+
+            cart[index].quantity--;
+
+            if (cart[index].quantity <= 0) {
+
+                cart.splice(index, 1);
+
+            }
+
+            updateCart();
+        }
+
+
+        function updateCart() {
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+            const cartTotal =
+                document.getElementById("cartTotal");
+
+
+            if (cart.length === 0) {
+
+                cartItems.innerHTML =
+                    '<div class="empty-cart">Your enquiry cart is empty.</div>';
+
+                cartTotal.innerText = "0";
+
+                return;
+            }
+
+
+            let total = 0;
+
+            cartItems.innerHTML = "";
+
+
+            cart.forEach((item, index) => {
+
+                let itemTotal =
+                    item.price * item.quantity;
+
+                total += itemTotal;
+
+
+                cartItems.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <div class="cart-item-info">
+
+                            <h4>${item.name}</h4>
+
+                            <p>
+                                ₦${item.price.toLocaleString()}
+                                each
+                            </p>
+
+                        </div>
+
+                        <div class="quantity">
+
+                            <button
+                                onclick="decreaseQuantity(${index})">
+                                −
+                            </button>
+
+                            <strong>
+                                ${item.quantity}
+                            </strong>
+
+                            <button
+                                onclick="increaseQuantity(${index})">
+                                +
+                            </button>
+
+                        </div>
+
+                        <strong>
+                            ₦${itemTotal.toLocaleString()}
+                        </strong>
+
+                    </div>
+
+                `;
+            });
+
+
+            cartTotal.innerText =
+                total.toLocaleString();
+        }
+
+
+        function sendQuote() {
+
+            const name =
+                document.getElementById("customerName").value.trim();
+
+            const phone =
+                document.getElementById("customerPhone").value.trim();
+
+            const location =
+                document.getElementById("customerLocation").value.trim();
+
+            const service =
+                document.getElementById("serviceType").value;
+
+            const message =
+                document.getElementById("customerMessage").value.trim();
+
+
+            if (!name || !phone || !location || !service) {
+
+                alert(
+                    "Please fill in your name, phone number, location and service."
+                );
+
+                return;
+            }
+
+
+            let orderText = "";
+
+
+            if (cart.length > 0) {
+
+                orderText += "\n\nFurniture Selection:\n";
+
+                cart.forEach(item => {
+
+                    orderText +=
+                        "- " +
+                        item.name +
+                        " x" +
+                        item.quantity +
+                        " = ₦" +
+                        (item.price * item.quantity)
+                            .toLocaleString() +
+                        "\n";
+                });
+
+
+                let total = cart.reduce(
+                    (sum, item) =>
+                        sum + item.price * item.quantity,
+                    0
+                );
+
+
+                orderText +=
+                    "Total: ₦" +
+                    total.toLocaleString();
+            }
+
+
+            const whatsappMessage =
+
+                "Hello AY Décor & Furniture! 👋\n\n" +
+
+                "I would like to make an enquiry.\n\n" +
+
+                "Name: " +
+                name +
+                "\n" +
+
+                "Phone: " +
+                phone +
+                "\n" +
+
+                "Location: " +
+                location +
+                "\n" +
+
+                "Service: " +
+                service +
+                "\n" +
+
+                "Project details: " +
+                (message || "Not provided") +
+
+                orderText;
+
+
+            const url =
+                "https://wa.me/2347055571252?text=" +
+                encodeURIComponent(whatsappMessage);
+
+
+            window.open(url, "_blank");
+        }
+
+    </script>
+
+</body>
+</html>
